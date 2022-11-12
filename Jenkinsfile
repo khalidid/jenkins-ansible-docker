@@ -20,13 +20,13 @@ node {
           }
     }
     stage('Build - Push') {
-          docker.withRegistry('https://registry.gitlab.com', 'reg1') {
+          docker.withRegistry('https://192.168.61.20', 'reg1') {
               img.push 'latest'
               img.push()
           }
     }
     stage('Deploy - Clone') {
-          git 'https://github.com/priximmo/jenkins-ansible-docker.git'
+          git 'https://github.com/khalidid/jenkins-ansible-docker.git'
     }
     stage('Deploy - End') {
       ansiblePlaybook (
