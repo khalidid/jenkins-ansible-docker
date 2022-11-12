@@ -10,6 +10,7 @@
       - docker-compose
 
 - name: run container
+  become: yes
   docker_container:
     name: wartest
     image: "{{ image }}"
